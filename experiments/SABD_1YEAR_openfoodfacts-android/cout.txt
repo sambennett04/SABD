@@ -1,0 +1,67 @@
+{"asctime": "2025-02-12 15:47:49", "levelname": "INFO", "message": null, "test_bug_database": "../dataset/SEA_issue_reports/openfoodfacts-androidapp/openfoodfacts-androidapp_soft_clean.jsonl", "bug_database": "../dataset/SEA_issue_reports/openfoodfacts-androidapp/openfoodfacts-androidapp_soft_clean.jsonl", "database_name": "openfoodfacts-androidapp", "epochs": 12, "lr": 0.001, "l2": 0.0, "batch_size": 256, "ranking_batch_size": 512, "ranking_n_workers": 2, "cuda": true, "cache_folder": "scratch/temp/", "pairs_training": "../dataset/vscode/training_split_vscode_pairs_random_1.txt", "pairs_validation": "../dataset/vscode/validation_vscode_pairs_random_1.txt", "neg_pair_generator": {"type": "non_negative", "training": "../dataset/vscode/training_vscode.txt", "rate": 1, "pre_list_file": null, "k": 0, "n_tries": 15, "preselected_length": null, "random_anchor": true}, "loss": "bce", "margin": 0, "categorical": {"lexicons": "../dataset/vscode/categorical_lexicons.json", "bn_last_layer": false, "emb_size": 20, "hidden_sizes": [40], "dropout": 0.0, "activation": "relu", "batch_normalization": false, "layer_norm": false}, "compare_aggregation": {"word_embedding": "word_embedding/vscode/glove_42B_300d_vscode_soft.npy", "norm_word_embedding": false, "lexicon": "word_embedding/vscode/glove_42B_300d_vscode_soft.lxc", "sent_representation": null, "tokenizer": "white_space", "bow": false, "frequency": false, "extractor": {"update_embedding": false, "filters": ["TransformLowerCaseFilter"], "hidden_size": 150, "dropout": 0.0, "layer_norm": false, "txt_field_emb_size": 5, "field_word_combination": "cat", "emb_dropout": 0.0, "scaled_attention": true, "model": "linear", "use_categorical": false, "bidirectional": true}, "matching": {"type": "full", "scaled_attention": true, "comparison_hidden_size": 100, "dropout": 0.0, "residual": true, "layer_norm": false, "attention_hidden_size": 200, "attention": "dot_product", "comparison_func": "submult+nn"}, "aggregate": {"model": "lstm", "window": [3, 4, 5], "nfilters": 100, "hidden_size": 150, "dropout": 0.0, "bidirectional": true, "num_layers": 1, "self_att_hidden": 50, "layer_norm": false, "n_hops": 20}, "classifier": {"hidden_size": [300], "output_act": "sigmoid", "hadamard_diff_textual": true, "hadamard_diff_categorical": true, "textual_hidden_layer": 600, "categorical_hidden_layer": 40, "categorical_dropout": 0.0, "dropout": 0.0, "only_candidate": false, "layer_norm": false, "batch_normalization": false}}, "random_switch": true, "recall_estimation_train": null, "recall_estimation": null, "sample_size_rr_tr": 0, "sample_size_rr_val": 0, "rr_val_epoch": 100, "rr_train_epoch": 100, "ranking_result_file": null, "optimizer": "adam", "lr_scheduler": null, "save": null, "save_by_epoch": null, "load": "saved_models/vscode_saved.pt", "recall_rate": {"type": "sun2011", "dataset": "../dataset/SEA_issue_reports/openfoodfacts-androidapp/test_openfoodfacts-androidapp.txt", "result_file": null, "group_by_master": true, "window": 365}, "pair_test_dataset": null, "rep": {"model": null, "input": null, "training": null, "rate": 1, "neg_training": 10000, "k": 1000}, "rr_scorer": "general", "seed": 879308370}
+{"asctime": "2025-02-12 15:47:49", "levelname": "INFO", "message": "It started at: 2025-02-12 15:47:49.527100"}
+{"asctime": "2025-02-12 15:47:49", "levelname": "INFO", "message": "Turning CUDA on"}
+{"asctime": "2025-02-12 15:47:54", "levelname": "INFO", "message": "Using Categorical Information."}
+word_embedding/vscode/glove_42B_300d_vscode_soft.npy
+The unknown symbol of the lexicon '' wasn't defined.
+(36730, 300)
+2
+300
+{"asctime": "2025-02-12 15:47:55", "levelname": "INFO", "message": "Lexicon size: 36730"}
+{"asctime": "2025-02-12 15:47:55", "levelname": "INFO", "message": "Word Embedding size: 300"}
+{"asctime": "2025-02-12 15:47:55", "levelname": "INFO", "message": "Use white space tokenizer to tokenize summary information"}
+{"asctime": "2025-02-12 15:47:55", "levelname": "INFO", "message": "BoW=False and TF=False"}
+{"asctime": "2025-02-12 15:47:55", "levelname": "INFO", "message": "Using Summary and Description information."}
+SABDEncoder was created!
+the embedding object matrix is [[0.05362702075684175 0.07439343445434951 -0.029465152059763897 ...
+  -0.021725739761307844 0.08419023710842688 0.0953974763473821]
+ [-0.20838 -0.14932 -0.017528 ... -0.54066 0.21199 -0.0094357]
+ [-0.09611 -0.25788 -0.3586 ... -0.3703 -0.092774 0.39058]
+ ...
+ [0.421177 -0.245981 -0.02406 ... -0.404026 0.302067 0.225934]
+ [0.401295 0.178345 0.276591 ... -0.045732 -0.072047 0.587338]
+ [0.0 0.0 0.0 ... 0.0 0.0 0.0]]
+{"asctime": "2025-02-12 15:47:55", "levelname": "INFO", "message": "Using BCE Loss: margin=0"}
+success the model was loaded!!
+{"asctime": "2025-02-12 15:47:55", "levelname": "INFO", "message": "Adam"}
+{"asctime": "2025-02-12 15:47:55", "levelname": "INFO", "message": "Calculating recall rate: sun2011"}
+oldest duplicate bug is  ('4686', datetime.datetime(2022, 4, 18, 8, 21, 12, tzinfo=datetime.timezone.utc)) 
+
+
+Bug 690 has 0 candidates!
+Recommendation list of 690 is empty. Consider it as miss.
+Bug 1010 has 0 candidates!
+Recommendation list of 1010 is empty. Consider it as miss.
+Bug 1551 has 0 candidates!
+Recommendation list of 1551 is empty. Consider it as miss.
+Bug 1608 has 0 candidates!
+Recommendation list of 1608 is empty. Consider it as miss.
+Bug 2158 has 0 candidates!
+Recommendation list of 2158 is empty. Consider it as miss.
+Bug 3772 has 0 candidates!
+Recommendation list of 3772 is empty. Consider it as miss.
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": "[] Throughput: 2.86340283022441 bugs per second (bugs=46 ,seconds=16.064802169799805)"}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 1, "rate": 0.3695652173913043, "hit": 17, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 2, "rate": 0.5217391304347826, "hit": 24, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 3, "rate": 0.5869565217391305, "hit": 27, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 4, "rate": 0.6086956521739131, "hit": 28, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 5, "rate": 0.6304347826086957, "hit": 29, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 6, "rate": 0.6304347826086957, "hit": 29, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 7, "rate": 0.6304347826086957, "hit": 29, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 8, "rate": 0.6521739130434783, "hit": 30, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 9, "rate": 0.6739130434782609, "hit": 31, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 10, "rate": 0.6739130434782609, "hit": 31, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 11, "rate": 0.6956521739130435, "hit": 32, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 12, "rate": 0.6956521739130435, "hit": 32, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 13, "rate": 0.717391304347826, "hit": 33, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 14, "rate": 0.717391304347826, "hit": 33, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 15, "rate": 0.717391304347826, "hit": 33, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 16, "rate": 0.717391304347826, "hit": 33, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 17, "rate": 0.717391304347826, "hit": 33, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 18, "rate": 0.717391304347826, "hit": 33, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 19, "rate": 0.717391304347826, "hit": 33, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 20, "rate": 0.717391304347826, "hit": 33, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": null, "type": "metric", "label": "MAP", "value": 0.48991130368451613, "sum": 22.535919969487743, "total": 46, "epoch": 0}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": "[1, 1, 3, 1, 1, 60, 1, inf, 2, 5, 8, inf, 51, 68, 2, inf, 1, inf, 1, 4, 3, inf, 70, 2, 2, 11, 1, 2, 9, 2, 1, 1, 1, 1, 1, 13, 1, 22, 1, 36, inf, 3, 2, 1, 23, 1]"}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": "It completed at: 2025-02-12 15:48:11.543691"}
+{"asctime": "2025-02-12 15:48:11", "levelname": "INFO", "message": "Completed after: 0:00:22.016591"}

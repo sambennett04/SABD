@@ -1,0 +1,137 @@
+{
+  "batch_size": 256,
+  "bug_database": "../dataset/SEA_issue_reports/Slide/Slide_soft_clean.jsonl",
+  "cache_folder": "scratch/temp/",
+  "categorical": {
+    "activation": "relu",
+    "batch_normalization": false,
+    "bn_last_layer": false,
+    "dropout": 0.0,
+    "emb_size": 20,
+    "hidden_sizes": [
+      40
+    ],
+    "layer_norm": false,
+    "lexicons": "../dataset/vscode/categorical_lexicons.json"
+  },
+  "compare_aggregation": {
+    "aggregate": {
+      "bidirectional": true,
+      "dropout": 0.0,
+      "hidden_size": 150,
+      "layer_norm": false,
+      "model": "lstm",
+      "n_hops": 20,
+      "nfilters": 100,
+      "num_layers": 1,
+      "self_att_hidden": 50,
+      "window": [
+        3,
+        4,
+        5
+      ]
+    },
+    "bow": false,
+    "classifier": {
+      "batch_normalization": false,
+      "categorical_dropout": 0.0,
+      "categorical_hidden_layer": 40,
+      "dropout": 0.0,
+      "hadamard_diff_categorical": true,
+      "hadamard_diff_textual": true,
+      "hidden_size": [
+        300
+      ],
+      "layer_norm": false,
+      "only_candidate": false,
+      "output_act": "sigmoid",
+      "textual_hidden_layer": 600
+    },
+    "extractor": {
+      "bidirectional": true,
+      "dropout": 0.0,
+      "emb_dropout": 0.0,
+      "field_word_combination": "cat",
+      "filters": [
+        "TransformLowerCaseFilter"
+      ],
+      "hidden_size": 150,
+      "layer_norm": false,
+      "model": "linear",
+      "scaled_attention": true,
+      "txt_field_emb_size": 5,
+      "update_embedding": false,
+      "use_categorical": false
+    },
+    "frequency": false,
+    "lexicon": "word_embedding/vscode/glove_42B_300d_vscode_soft.lxc",
+    "matching": {
+      "attention": "dot_product",
+      "attention_hidden_size": 200,
+      "comparison_func": "submult+nn",
+      "comparison_hidden_size": 100,
+      "dropout": 0.0,
+      "layer_norm": false,
+      "residual": true,
+      "scaled_attention": true,
+      "type": "full"
+    },
+    "norm_word_embedding": false,
+    "sent_representation": null,
+    "tokenizer": "white_space",
+    "word_embedding": "word_embedding/vscode/glove_42B_300d_vscode_soft.npy"
+  },
+  "cuda": true,
+  "database_name": "Slide",
+  "epochs": 12,
+  "l2": 0.0,
+  "load": "saved_models/vscode_saved.pt",
+  "loss": "bce",
+  "lr": 0.001,
+  "lr_scheduler": null,
+  "margin": 0,
+  "neg_pair_generator": {
+    "k": 0,
+    "n_tries": 15,
+    "pre_list_file": null,
+    "preselected_length": null,
+    "random_anchor": true,
+    "rate": 1,
+    "training": "../dataset/vscode/training_vscode.txt",
+    "type": "non_negative"
+  },
+  "optimizer": "adam",
+  "pair_test_dataset": null,
+  "pairs_training": "../dataset/vscode/training_split_vscode_pairs_random_1.txt",
+  "pairs_validation": "../dataset/vscode/validation_vscode_pairs_random_1.txt",
+  "random_switch": true,
+  "ranking_batch_size": 512,
+  "ranking_n_workers": 2,
+  "ranking_result_file": null,
+  "recall_estimation": null,
+  "recall_estimation_train": null,
+  "recall_rate": {
+    "dataset": "../dataset/SEA_issue_reports/Slide/test_Slide.txt",
+    "group_by_master": true,
+    "result_file": null,
+    "type": "sun2011",
+    "window": 365
+  },
+  "rep": {
+    "input": null,
+    "k": 1000,
+    "model": null,
+    "neg_training": 10000,
+    "rate": 1,
+    "training": null
+  },
+  "rr_scorer": "general",
+  "rr_train_epoch": 100,
+  "rr_val_epoch": 100,
+  "sample_size_rr_tr": 0,
+  "sample_size_rr_val": 0,
+  "save": null,
+  "save_by_epoch": null,
+  "seed": 630506109,
+  "test_bug_database": "../dataset/SEA_issue_reports/Slide/Slide_soft_clean.jsonl"
+}

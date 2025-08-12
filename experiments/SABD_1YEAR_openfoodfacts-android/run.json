@@ -1,0 +1,101 @@
+{
+  "artifacts": [],
+  "command": "main",
+  "experiment": {
+    "base_dir": "/scratch/projects/sam/repos/SABD_Replication_SB/SABD/experiments",
+    "dependencies": [
+      "nltk==3.6.5",
+      "numpy==1.21.6",
+      "pytorch-ignite==0.1.2",
+      "sacred==0.8.2",
+      "torch==1.11.0+cu113"
+    ],
+    "mainfile": "sabd_load_test.py",
+    "name": "sabd",
+    "repositories": [
+      {
+        "commit": "86b7b4d6bde884c21b4688bf90f815c7a868f0a7",
+        "dirty": true,
+        "url": "https://github.com/sambennett04/SABD_Replication_SB.git"
+      }
+    ],
+    "sources": [
+      [
+        "sabd_load_test.py",
+        "_sources/sabd_load_test_965228dbf45760eca2d85220f11f4dda.py"
+      ]
+    ]
+  },
+  "heartbeat": "2025-02-12T15:48:11.740123",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz",
+    "gpus": {
+      "driver_version": "565.57.01",
+      "gpus": [
+        {
+          "model": "NVIDIA A40",
+          "persistence_mode": true,
+          "total_memory": 46068
+        },
+        {
+          "model": "Tesla T4",
+          "persistence_mode": true,
+          "total_memory": 15360
+        },
+        {
+          "model": "Tesla T4",
+          "persistence_mode": true,
+          "total_memory": 15360
+        },
+        {
+          "model": "Tesla T4",
+          "persistence_mode": true,
+          "total_memory": 15360
+        }
+      ]
+    },
+    "hostname": "ocs1",
+    "os": [
+      "Linux",
+      "Linux-5.15.0-126-generic-x86_64-with-debian-bullseye-sid"
+    ],
+    "python_version": "3.7.11"
+  },
+  "meta": {
+    "command": "main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": "./experiments",
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "./json_parameters/sabd_vscode_inference_openfoodfacts-androidapp.json",
+        "recall_rate.window=365"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2025-02-12T15:47:49.522279",
+  "status": "COMPLETED",
+  "stop_time": "2025-02-12T15:48:11.738249"
+}

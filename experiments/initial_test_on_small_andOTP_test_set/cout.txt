@@ -1,0 +1,73 @@
+{"asctime": "2025-01-28 15:26:48", "levelname": "INFO", "message": null, "test_bug_database": "../dataset/andOTP/andOTPSabd.jsonl", "bug_database": "../dataset/andOTP/andOTPSabd.jsonl", "database_name": "vscode", "epochs": 12, "lr": 0.001, "l2": 0.0, "batch_size": 256, "ranking_batch_size": 512, "ranking_n_workers": 2, "cuda": true, "cache_folder": "scratch/temp/", "pairs_training": "../dataset/vscode/training_split_vscode_pairs_random_1.txt", "pairs_validation": "../dataset/vscode/validation_vscode_pairs_random_1.txt", "neg_pair_generator": {"type": "non_negative", "training": "../dataset/vscode/training_vscode.txt", "rate": 1, "pre_list_file": null, "k": 0, "n_tries": 15, "preselected_length": null, "random_anchor": true}, "loss": "bce", "margin": 0, "categorical": {"lexicons": "../dataset/vscode/categorical_lexicons.json", "bn_last_layer": false, "emb_size": 20, "hidden_sizes": [40], "dropout": 0.0, "activation": "relu", "batch_normalization": false, "layer_norm": false}, "compare_aggregation": {"word_embedding": "word_embedding/vscode/glove_42B_300d_vscode_soft.npy", "norm_word_embedding": false, "lexicon": "word_embedding/vscode/glove_42B_300d_vscode_soft.lxc", "sent_representation": null, "tokenizer": "white_space", "bow": false, "frequency": false, "extractor": {"update_embedding": false, "filters": ["TransformLowerCaseFilter"], "hidden_size": 150, "dropout": 0.0, "layer_norm": false, "txt_field_emb_size": 5, "field_word_combination": "cat", "emb_dropout": 0.0, "scaled_attention": true, "model": "linear", "use_categorical": false, "bidirectional": true}, "matching": {"type": "full", "scaled_attention": true, "comparison_hidden_size": 100, "dropout": 0.0, "residual": true, "layer_norm": false, "attention_hidden_size": 200, "attention": "dot_product", "comparison_func": "submult+nn"}, "aggregate": {"model": "lstm", "window": [3, 4, 5], "nfilters": 100, "hidden_size": 150, "dropout": 0.0, "bidirectional": true, "num_layers": 1, "self_att_hidden": 50, "layer_norm": false, "n_hops": 20}, "classifier": {"hidden_size": [300], "output_act": "sigmoid", "hadamard_diff_textual": true, "hadamard_diff_categorical": true, "textual_hidden_layer": 600, "categorical_hidden_layer": 40, "categorical_dropout": 0.0, "dropout": 0.0, "only_candidate": false, "layer_norm": false, "batch_normalization": false}}, "random_switch": true, "recall_estimation_train": null, "recall_estimation": null, "sample_size_rr_tr": 0, "sample_size_rr_val": 0, "rr_val_epoch": 100, "rr_train_epoch": 100, "ranking_result_file": null, "optimizer": "adam", "lr_scheduler": null, "save": null, "save_by_epoch": null, "load": "saved_models/vscode_saved.pt", "recall_rate": {"type": "sun2011", "dataset": "../dataset/andOTP/test_andOTP.txt", "result_file": null, "group_by_master": true, "window": 365}, "pair_test_dataset": null, "rep": {"model": null, "input": null, "training": null, "rate": 1, "neg_training": 10000, "k": 1000}, "rr_scorer": "general", "seed": 1973127}
+{"asctime": "2025-01-28 15:26:48", "levelname": "INFO", "message": "It started at: 2025-01-28 15:26:48.372651"}
+{"asctime": "2025-01-28 15:26:48", "levelname": "INFO", "message": "Turning CUDA on"}
+{"asctime": "2025-01-28 15:26:53", "levelname": "INFO", "message": "Using Categorical Information."}
+word_embedding/vscode/glove_42B_300d_vscode_soft.npy
+The unknown symbol of the lexicon '' wasn't defined.
+(36730, 300)
+2
+300
+{"asctime": "2025-01-28 15:26:53", "levelname": "INFO", "message": "Lexicon size: 36730"}
+{"asctime": "2025-01-28 15:26:53", "levelname": "INFO", "message": "Word Embedding size: 300"}
+{"asctime": "2025-01-28 15:26:53", "levelname": "INFO", "message": "Use white space tokenizer to tokenize summary information"}
+{"asctime": "2025-01-28 15:26:53", "levelname": "INFO", "message": "BoW=False and TF=False"}
+{"asctime": "2025-01-28 15:26:53", "levelname": "INFO", "message": "Using Summary and Description information."}
+SABDEncoder was created!
+the embedding object matrix is [[0.05362702075684175 0.07439343445434951 -0.029465152059763897 ...
+  -0.021725739761307844 0.08419023710842688 0.0953974763473821]
+ [-0.20838 -0.14932 -0.017528 ... -0.54066 0.21199 -0.0094357]
+ [-0.09611 -0.25788 -0.3586 ... -0.3703 -0.092774 0.39058]
+ ...
+ [0.421177 -0.245981 -0.02406 ... -0.404026 0.302067 0.225934]
+ [0.401295 0.178345 0.276591 ... -0.045732 -0.072047 0.587338]
+ [0.0 0.0 0.0 ... 0.0 0.0 0.0]]
+{"asctime": "2025-01-28 15:26:54", "levelname": "INFO", "message": "Using BCE Loss: margin=0"}
+success the model was loaded!!
+{"asctime": "2025-01-28 15:26:54", "levelname": "INFO", "message": "Adam"}
+{"asctime": "2025-01-28 15:26:54", "levelname": "INFO", "message": "Calculating recall rate: sun2011"}
+Bug 42 has 0 candidates!
+Recommendation list of 42 is empty. Consider it as miss.
+recomendation for  42 is  []
+pos for  42 is  inf
+correct_cand for  42 is  None
+candidates for 91 are ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '16', '42']
+recomendation for  91 is  [('16', 0.9984505), ('10', 0.59317535), ('6', 0.5761765), ('5', 0.20020124), ('1', 0.066409856), ('7', 0.013607587), ('42', 0.0064850887), ('9', 0.0035853635), ('8', 0.0019588033), ('4', 0.0005113398), ('3', 9.438887e-05), ('2', 6.145092e-05)]
+pos for  91 is  1
+correct_cand for  91 is  16
+candidates for 92 are ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '16', '42', '91']
+recomendation for  92 is  [('16', 0.86951864), ('91', 0.86951864), ('10', 0.25334373), ('6', 0.016048977), ('5', 0.0060599255), ('8', 0.004027301), ('7', 0.0029965003), ('9', 0.0023977424), ('1', 0.00054675026), ('2', 0.00014830552), ('3', 0.00011294827), ('42', 0.00011033686), ('4', 7.968197e-05)]
+pos for  92 is  1
+correct_cand for  92 is  16
+candidates for 140 are ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '16', '42', '91', '92']
+recomendation for  140 is  [('1', 0.00063143997), ('6', 0.0002689871), ('16', 0.00025829632), ('91', 0.00025829632), ('5', 0.00015283783), ('92', 0.00012740333), ('10', 7.595856e-05), ('7', 6.769752e-05), ('42', 2.7720507e-06), ('9', 2.1521485e-06), ('4', 5.2466294e-07), ('3', 3.3124968e-07), ('2', 2.1529605e-07), ('8', 1.3132261e-07)]
+pos for  140 is  3
+correct_cand for  140 is  16
+candidates for 323 are ['241']
+recomendation for  323 is  [('241', 0.97290367)]
+pos for  323 is  1
+correct_cand for  323 is  241
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": "[] Throughput: 3.991268946923777 bugs per second (bugs=5 ,seconds=1.2527344226837158)"}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 1, "rate": 0.6, "hit": 3, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 2, "rate": 0.6, "hit": 3, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 3, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 4, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 5, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 6, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 7, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 8, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 9, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 10, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 11, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 12, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 13, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 14, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 15, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 16, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 17, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 18, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 19, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 20, "rate": 0.8, "hit": 4, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": null, "type": "metric", "label": "MAP", "value": 0.6666666666666667, "sum": 3.3333333333333335, "total": 5, "epoch": 0}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": "[inf, 1, 1, 3, 1]"}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": "It completed at: 2025-01-28 15:26:55.436542"}
+{"asctime": "2025-01-28 15:26:55", "levelname": "INFO", "message": "Completed after: 0:00:07.063891"}

@@ -1,0 +1,241 @@
+{"asctime": "2025-02-12 15:13:56", "levelname": "INFO", "message": null, "test_bug_database": "../dataset/SEA_issue_reports/AntennaPod/AntennaPod_soft_clean.jsonl", "bug_database": "../dataset/SEA_issue_reports/AntennaPod/AntennaPod_soft_clean.jsonl", "database_name": "AntennaPod", "epochs": 12, "lr": 0.001, "l2": 0.0, "batch_size": 256, "ranking_batch_size": 512, "ranking_n_workers": 2, "cuda": true, "cache_folder": "scratch/temp/", "pairs_training": "../dataset/vscode/training_split_vscode_pairs_random_1.txt", "pairs_validation": "../dataset/vscode/validation_vscode_pairs_random_1.txt", "neg_pair_generator": {"type": "non_negative", "training": "../dataset/vscode/training_vscode.txt", "rate": 1, "pre_list_file": null, "k": 0, "n_tries": 15, "preselected_length": null, "random_anchor": true}, "loss": "bce", "margin": 0, "categorical": {"lexicons": "../dataset/vscode/categorical_lexicons.json", "bn_last_layer": false, "emb_size": 20, "hidden_sizes": [40], "dropout": 0.0, "activation": "relu", "batch_normalization": false, "layer_norm": false}, "compare_aggregation": {"word_embedding": "word_embedding/vscode/glove_42B_300d_vscode_soft.npy", "norm_word_embedding": false, "lexicon": "word_embedding/vscode/glove_42B_300d_vscode_soft.lxc", "sent_representation": null, "tokenizer": "white_space", "bow": false, "frequency": false, "extractor": {"update_embedding": false, "filters": ["TransformLowerCaseFilter"], "hidden_size": 150, "dropout": 0.0, "layer_norm": false, "txt_field_emb_size": 5, "field_word_combination": "cat", "emb_dropout": 0.0, "scaled_attention": true, "model": "linear", "use_categorical": false, "bidirectional": true}, "matching": {"type": "full", "scaled_attention": true, "comparison_hidden_size": 100, "dropout": 0.0, "residual": true, "layer_norm": false, "attention_hidden_size": 200, "attention": "dot_product", "comparison_func": "submult+nn"}, "aggregate": {"model": "lstm", "window": [3, 4, 5], "nfilters": 100, "hidden_size": 150, "dropout": 0.0, "bidirectional": true, "num_layers": 1, "self_att_hidden": 50, "layer_norm": false, "n_hops": 20}, "classifier": {"hidden_size": [300], "output_act": "sigmoid", "hadamard_diff_textual": true, "hadamard_diff_categorical": true, "textual_hidden_layer": 600, "categorical_hidden_layer": 40, "categorical_dropout": 0.0, "dropout": 0.0, "only_candidate": false, "layer_norm": false, "batch_normalization": false}}, "random_switch": true, "recall_estimation_train": null, "recall_estimation": null, "sample_size_rr_tr": 0, "sample_size_rr_val": 0, "rr_val_epoch": 100, "rr_train_epoch": 100, "ranking_result_file": null, "optimizer": "adam", "lr_scheduler": null, "save": null, "save_by_epoch": null, "load": "saved_models/vscode_saved.pt", "recall_rate": {"type": "sun2011", "dataset": "../dataset/SEA_issue_reports/AntennaPod/test_AntennaPod.txt", "result_file": null, "group_by_master": true, "window": 365}, "pair_test_dataset": null, "rep": {"model": null, "input": null, "training": null, "rate": 1, "neg_training": 10000, "k": 1000}, "rr_scorer": "general", "seed": 926510926}
+{"asctime": "2025-02-12 15:13:56", "levelname": "INFO", "message": "It started at: 2025-02-12 15:13:56.800520"}
+{"asctime": "2025-02-12 15:13:56", "levelname": "INFO", "message": "Turning CUDA on"}
+{"asctime": "2025-02-12 15:14:01", "levelname": "INFO", "message": "Using Categorical Information."}
+word_embedding/vscode/glove_42B_300d_vscode_soft.npy
+The unknown symbol of the lexicon '' wasn't defined.
+(36730, 300)
+2
+300
+{"asctime": "2025-02-12 15:14:02", "levelname": "INFO", "message": "Lexicon size: 36730"}
+{"asctime": "2025-02-12 15:14:02", "levelname": "INFO", "message": "Word Embedding size: 300"}
+{"asctime": "2025-02-12 15:14:02", "levelname": "INFO", "message": "Use white space tokenizer to tokenize summary information"}
+{"asctime": "2025-02-12 15:14:02", "levelname": "INFO", "message": "BoW=False and TF=False"}
+{"asctime": "2025-02-12 15:14:02", "levelname": "INFO", "message": "Using Summary and Description information."}
+SABDEncoder was created!
+the embedding object matrix is [[0.05362702075684175 0.07439343445434951 -0.029465152059763897 ...
+  -0.021725739761307844 0.08419023710842688 0.0953974763473821]
+ [-0.20838 -0.14932 -0.017528 ... -0.54066 0.21199 -0.0094357]
+ [-0.09611 -0.25788 -0.3586 ... -0.3703 -0.092774 0.39058]
+ ...
+ [0.421177 -0.245981 -0.02406 ... -0.404026 0.302067 0.225934]
+ [0.401295 0.178345 0.276591 ... -0.045732 -0.072047 0.587338]
+ [0.0 0.0 0.0 ... 0.0 0.0 0.0]]
+{"asctime": "2025-02-12 15:14:02", "levelname": "INFO", "message": "Using BCE Loss: margin=0"}
+success the model was loaded!!
+{"asctime": "2025-02-12 15:14:02", "levelname": "INFO", "message": "Adam"}
+{"asctime": "2025-02-12 15:14:02", "levelname": "INFO", "message": "Calculating recall rate: sun2011"}
+oldest duplicate bug is  ('6893', datetime.datetime(2024, 1, 21, 13, 58, 22, tzinfo=datetime.timezone.utc)) 
+
+
+Bug 334 has 0 candidates!
+Recommendation list of 334 is empty. Consider it as miss.
+Bug 606 has 0 candidates!
+Recommendation list of 606 is empty. Consider it as miss.
+Bug 804 has 0 candidates!
+Recommendation list of 804 is empty. Consider it as miss.
+Bug 886 has 0 candidates!
+Recommendation list of 886 is empty. Consider it as miss.
+Bug 917 has 0 candidates!
+Recommendation list of 917 is empty. Consider it as miss.
+Bug 951 has 0 candidates!
+Recommendation list of 951 is empty. Consider it as miss.
+Bug 1001 has 0 candidates!
+Recommendation list of 1001 is empty. Consider it as miss.
+Bug 1077 has 0 candidates!
+Recommendation list of 1077 is empty. Consider it as miss.
+Bug 1839 has 0 candidates!
+Recommendation list of 1839 is empty. Consider it as miss.
+Bug 1880 has 0 candidates!
+Recommendation list of 1880 is empty. Consider it as miss.
+Bug 2164 has 0 candidates!
+Recommendation list of 2164 is empty. Consider it as miss.
+Bug 2187 has 0 candidates!
+Recommendation list of 2187 is empty. Consider it as miss.
+Bug 2218 has 0 candidates!
+Recommendation list of 2218 is empty. Consider it as miss.
+Bug 2248 has 0 candidates!
+Recommendation list of 2248 is empty. Consider it as miss.
+Bug 2276 has 0 candidates!
+Recommendation list of 2276 is empty. Consider it as miss.
+Bug 2278 has 0 candidates!
+Recommendation list of 2278 is empty. Consider it as miss.
+Bug 2292 has 0 candidates!
+Recommendation list of 2292 is empty. Consider it as miss.
+Bug 2312 has 0 candidates!
+Recommendation list of 2312 is empty. Consider it as miss.
+Bug 2323 has 0 candidates!
+Recommendation list of 2323 is empty. Consider it as miss.
+Bug 2371 has 0 candidates!
+Recommendation list of 2371 is empty. Consider it as miss.
+Bug 2374 has 0 candidates!
+Recommendation list of 2374 is empty. Consider it as miss.
+Bug 2393 has 0 candidates!
+Recommendation list of 2393 is empty. Consider it as miss.
+Bug 2417 has 0 candidates!
+Recommendation list of 2417 is empty. Consider it as miss.
+Bug 2418 has 0 candidates!
+Recommendation list of 2418 is empty. Consider it as miss.
+Bug 2427 has 0 candidates!
+Recommendation list of 2427 is empty. Consider it as miss.
+Bug 2446 has 0 candidates!
+Recommendation list of 2446 is empty. Consider it as miss.
+Bug 2448 has 0 candidates!
+Recommendation list of 2448 is empty. Consider it as miss.
+Bug 2507 has 0 candidates!
+Recommendation list of 2507 is empty. Consider it as miss.
+Bug 2527 has 0 candidates!
+Recommendation list of 2527 is empty. Consider it as miss.
+Bug 2570 has 0 candidates!
+Recommendation list of 2570 is empty. Consider it as miss.
+Bug 2610 has 0 candidates!
+Recommendation list of 2610 is empty. Consider it as miss.
+Bug 2648 has 0 candidates!
+Recommendation list of 2648 is empty. Consider it as miss.
+Bug 2702 has 0 candidates!
+Recommendation list of 2702 is empty. Consider it as miss.
+Bug 2707 has 0 candidates!
+Recommendation list of 2707 is empty. Consider it as miss.
+Bug 2742 has 0 candidates!
+Recommendation list of 2742 is empty. Consider it as miss.
+Bug 2783 has 0 candidates!
+Recommendation list of 2783 is empty. Consider it as miss.
+Bug 2798 has 0 candidates!
+Recommendation list of 2798 is empty. Consider it as miss.
+Bug 2891 has 0 candidates!
+Recommendation list of 2891 is empty. Consider it as miss.
+Bug 2903 has 0 candidates!
+Recommendation list of 2903 is empty. Consider it as miss.
+Bug 2911 has 0 candidates!
+Recommendation list of 2911 is empty. Consider it as miss.
+Bug 2916 has 0 candidates!
+Recommendation list of 2916 is empty. Consider it as miss.
+Bug 2981 has 0 candidates!
+Recommendation list of 2981 is empty. Consider it as miss.
+Bug 3142 has 0 candidates!
+Recommendation list of 3142 is empty. Consider it as miss.
+Bug 3211 has 0 candidates!
+Recommendation list of 3211 is empty. Consider it as miss.
+Bug 3257 has 0 candidates!
+Recommendation list of 3257 is empty. Consider it as miss.
+Bug 3325 has 0 candidates!
+Recommendation list of 3325 is empty. Consider it as miss.
+Bug 3381 has 0 candidates!
+Recommendation list of 3381 is empty. Consider it as miss.
+Bug 3436 has 0 candidates!
+Recommendation list of 3436 is empty. Consider it as miss.
+Bug 3483 has 0 candidates!
+Recommendation list of 3483 is empty. Consider it as miss.
+Bug 3536 has 0 candidates!
+Recommendation list of 3536 is empty. Consider it as miss.
+Bug 3541 has 0 candidates!
+Recommendation list of 3541 is empty. Consider it as miss.
+Bug 3603 has 0 candidates!
+Recommendation list of 3603 is empty. Consider it as miss.
+Bug 3616 has 0 candidates!
+Recommendation list of 3616 is empty. Consider it as miss.
+Bug 3632 has 0 candidates!
+Recommendation list of 3632 is empty. Consider it as miss.
+Bug 3676 has 0 candidates!
+Recommendation list of 3676 is empty. Consider it as miss.
+Bug 3893 has 0 candidates!
+Recommendation list of 3893 is empty. Consider it as miss.
+Bug 4392 has 0 candidates!
+Recommendation list of 4392 is empty. Consider it as miss.
+Bug 4403 has 0 candidates!
+Recommendation list of 4403 is empty. Consider it as miss.
+Bug 4415 has 0 candidates!
+Recommendation list of 4415 is empty. Consider it as miss.
+Bug 4467 has 0 candidates!
+Recommendation list of 4467 is empty. Consider it as miss.
+Bug 4514 has 0 candidates!
+Recommendation list of 4514 is empty. Consider it as miss.
+Bug 4546 has 0 candidates!
+Recommendation list of 4546 is empty. Consider it as miss.
+Bug 4652 has 0 candidates!
+Recommendation list of 4652 is empty. Consider it as miss.
+Bug 4750 has 0 candidates!
+Recommendation list of 4750 is empty. Consider it as miss.
+Bug 4773 has 0 candidates!
+Recommendation list of 4773 is empty. Consider it as miss.
+Bug 4907 has 0 candidates!
+Recommendation list of 4907 is empty. Consider it as miss.
+Bug 5077 has 0 candidates!
+Recommendation list of 5077 is empty. Consider it as miss.
+Bug 5284 has 0 candidates!
+Recommendation list of 5284 is empty. Consider it as miss.
+Bug 5457 has 0 candidates!
+Recommendation list of 5457 is empty. Consider it as miss.
+Bug 5685 has 0 candidates!
+Recommendation list of 5685 is empty. Consider it as miss.
+Bug 5884 has 0 candidates!
+Recommendation list of 5884 is empty. Consider it as miss.
+Bug 5899 has 0 candidates!
+Recommendation list of 5899 is empty. Consider it as miss.
+Bug 5905 has 0 candidates!
+Recommendation list of 5905 is empty. Consider it as miss.
+Bug 6023 has 0 candidates!
+Recommendation list of 6023 is empty. Consider it as miss.
+Bug 6128 has 0 candidates!
+Recommendation list of 6128 is empty. Consider it as miss.
+Bug 6151 has 0 candidates!
+Recommendation list of 6151 is empty. Consider it as miss.
+Bug 6197 has 0 candidates!
+Recommendation list of 6197 is empty. Consider it as miss.
+Bug 6234 has 0 candidates!
+Recommendation list of 6234 is empty. Consider it as miss.
+Bug 6245 has 0 candidates!
+Recommendation list of 6245 is empty. Consider it as miss.
+Bug 6319 has 0 candidates!
+Recommendation list of 6319 is empty. Consider it as miss.
+Bug 6340 has 0 candidates!
+Recommendation list of 6340 is empty. Consider it as miss.
+Bug 6359 has 0 candidates!
+Recommendation list of 6359 is empty. Consider it as miss.
+Bug 6382 has 0 candidates!
+Recommendation list of 6382 is empty. Consider it as miss.
+Bug 6395 has 0 candidates!
+Recommendation list of 6395 is empty. Consider it as miss.
+Bug 6444 has 0 candidates!
+Recommendation list of 6444 is empty. Consider it as miss.
+Bug 6455 has 0 candidates!
+Recommendation list of 6455 is empty. Consider it as miss.
+Bug 6457 has 0 candidates!
+Recommendation list of 6457 is empty. Consider it as miss.
+Bug 6463 has 0 candidates!
+Recommendation list of 6463 is empty. Consider it as miss.
+Bug 6493 has 0 candidates!
+Recommendation list of 6493 is empty. Consider it as miss.
+Bug 6504 has 0 candidates!
+Recommendation list of 6504 is empty. Consider it as miss.
+Bug 6508 has 0 candidates!
+Recommendation list of 6508 is empty. Consider it as miss.
+Bug 6566 has 0 candidates!
+Recommendation list of 6566 is empty. Consider it as miss.
+Bug 6893 has 0 candidates!
+Recommendation list of 6893 is empty. Consider it as miss.
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": "[] Throughput: 4.432811475848345 bugs per second (bugs=326 ,seconds=73.54249143600464)"}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 1, "rate": 0.2392638036809816, "hit": 78, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 2, "rate": 0.3159509202453988, "hit": 103, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 3, "rate": 0.401840490797546, "hit": 131, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 4, "rate": 0.4294478527607362, "hit": 140, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 5, "rate": 0.4570552147239264, "hit": 149, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 6, "rate": 0.4785276073619632, "hit": 156, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 7, "rate": 0.49079754601226994, "hit": 160, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 8, "rate": 0.5122699386503068, "hit": 167, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 9, "rate": 0.5184049079754601, "hit": 169, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 10, "rate": 0.5398773006134969, "hit": 176, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 11, "rate": 0.5429447852760736, "hit": 177, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 12, "rate": 0.5460122699386503, "hit": 178, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 13, "rate": 0.549079754601227, "hit": 179, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 14, "rate": 0.558282208588957, "hit": 182, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 15, "rate": 0.5613496932515337, "hit": 183, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 16, "rate": 0.5674846625766872, "hit": 185, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 17, "rate": 0.5736196319018405, "hit": 187, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 18, "rate": 0.5766871165644172, "hit": 188, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 19, "rate": 0.5797546012269938, "hit": 189, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "recall_rate", "k": 20, "rate": 0.5797546012269938, "hit": 189, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": null, "type": "metric", "label": "MAP", "value": 0.33542041883788587, "sum": 109.34705654115079, "total": 326, "epoch": 0}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": "[10, 2, 1, 6, 1, 18, 2, 1, 14, 3, 47, 33, inf, 4, 23, 7, 24, 2, 1, inf, 1, inf, 1, 35, inf, 4, 4, 40, 3, inf, 1, inf, 4, 63, 4, inf, 2, 94, 10, inf, 3, 8, 173, 26, 130, 155, 67, 44, 8, 5, 1, 1, 1, 1, 1, 5, 2, 4, 299, 1, 1, 12, 1, 1, 1, 55, 5, 2, 5, inf, 19, inf, 3, 4, 2, 5, 1, 1, 6, 1, 21, inf, 6, inf, 2, inf, 3, 16, 3, 5, inf, 1, inf, inf, 3, inf, inf, 1, 21, inf, 1, 1, 1, 1, 3, 1, inf, inf, 1, 1, 1, inf, 1, 3, 24, inf, inf, 8, inf, 1, 10, 1, 1, inf, inf, 2, 1, 1, 1, 10, 2, 3, 1, inf, 3, inf, 1, 15, 8, inf, 1, 1, 1, inf, 3, 1, inf, 3, 1, 6, 2, inf, inf, 1, inf, 1, 3, 28, 3, inf, 8, inf, 38, 1, 10, 1, 146, 1, 2, 1, inf, inf, 2, inf, inf, 3, 10, 1, inf, 3, 13, 71, 1, 9, 48, 3, 54, inf, inf, 1, 4, inf, 27, inf, 1, inf, 3, inf, 2, inf, 2, 32, inf, inf, 6, 62, inf, 3, 1, inf, 7, inf, 1, 1, 6, inf, 14, 14, 2, 3, 3, inf, 1, 1, 9, 41, 7, 2, 1, 16, 2, 1, 1, 1, 1, inf, inf, inf, inf, inf, 1, inf, 4, 1, 5, inf, 36, 61, inf, inf, 29, 8, inf, 40, 11, 53, 2, inf, 92, 1, 2, inf, 2, 6, 1, inf, 50, 10, inf, 5, 7, 3, 2, inf, inf, inf, inf, 1, 22, 17, 2, inf, inf, inf, 25, 1, inf, inf, 85, inf, 1, inf, inf, 1, inf, 50, 1, inf, 2, 1, inf, inf, inf, inf, 1, inf, 3, inf, inf, 3, 40, inf, 2, 33, 8, 1, 3, 1, 5, 3, 17, 186, 1, 85, 3, inf]"}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": "It completed at: 2025-02-12 15:15:16.265369"}
+{"asctime": "2025-02-12 15:15:16", "levelname": "INFO", "message": "Completed after: 0:01:19.464849"}

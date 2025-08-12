@@ -1,0 +1,209 @@
+{"asctime": "2025-01-18 17:27:12", "levelname": "INFO", "message": null, "bug_database": "../dataset/vscode/vscode_soft_clean.json", "database_name": "vscode", "epochs": 12, "lr": 0.001, "l2": 0.0, "batch_size": 256, "ranking_batch_size": 512, "ranking_n_workers": 2, "cuda": true, "cache_folder": "scratch/temp/", "pairs_training": "../dataset/vscode/training_split_vscode_pairs_random_1.txt", "pairs_validation": "../dataset/vscode/validation_vscode_pairs_random_1.txt", "neg_pair_generator": {"type": "non_negative", "training": "../dataset/vscode/training_vscode.txt", "rate": 1, "pre_list_file": null, "k": 0, "n_tries": 15, "preselected_length": null, "random_anchor": true}, "loss": "bce", "margin": 0, "categorical": {"lexicons": "../dataset/vscode/categorical_lexicons.json", "bn_last_layer": false, "emb_size": 20, "hidden_sizes": [40], "dropout": 0.0, "activation": "relu", "batch_normalization": false, "layer_norm": false}, "compare_aggregation": {"word_embedding": "word_embedding/vscode/glove_42B_300d_vscode_soft.npy", "norm_word_embedding": false, "lexicon": "word_embedding/vscode/glove_42B_300d_vscode_soft.lxc", "sent_representation": null, "tokenizer": "white_space", "bow": false, "frequency": false, "extractor": {"update_embedding": false, "filters": ["TransformLowerCaseFilter"], "hidden_size": 150, "dropout": 0.0, "layer_norm": false, "txt_field_emb_size": 5, "field_word_combination": "cat", "emb_dropout": 0.0, "scaled_attention": true, "model": "linear", "use_categorical": false, "bidirectional": true}, "matching": {"type": "full", "scaled_attention": true, "comparison_hidden_size": 100, "dropout": 0.0, "residual": true, "layer_norm": false, "attention_hidden_size": 200, "attention": "dot_product", "comparison_func": "submult+nn"}, "aggregate": {"model": "lstm", "window": [3, 4, 5], "nfilters": 100, "hidden_size": 150, "dropout": 0.0, "bidirectional": true, "num_layers": 1, "self_att_hidden": 50, "layer_norm": false, "n_hops": 20}, "classifier": {"hidden_size": [300], "output_act": "sigmoid", "hadamard_diff_textual": true, "hadamard_diff_categorical": true, "textual_hidden_layer": 600, "categorical_hidden_layer": 40, "categorical_dropout": 0.0, "dropout": 0.0, "only_candidate": false, "layer_norm": false, "batch_normalization": false}}, "random_switch": true, "recall_estimation_train": null, "recall_estimation": null, "sample_size_rr_tr": 0, "sample_size_rr_val": 0, "rr_val_epoch": 100, "rr_train_epoch": 100, "ranking_result_file": null, "optimizer": "adam", "lr_scheduler": null, "save": "saved_models/vscode_saved.pt", "save_by_epoch": null, "load": null, "recall_rate": {"type": "sun2011", "dataset": "../dataset/vscode/test_vscode.txt", "result_file": null, "group_by_master": true, "window": 365}, "pair_test_dataset": null, "rep": {"model": null, "input": null, "training": null, "rate": 1, "neg_training": 10000, "k": 1000}, "rr_scorer": "general", "seed": 698414432}
+{"asctime": "2025-01-18 17:27:12", "levelname": "INFO", "message": "It started at: 2025-01-18 17:27:12.156309"}
+{"asctime": "2025-01-18 17:27:13", "levelname": "INFO", "message": "Turning CUDA on"}
+{"asctime": "2025-01-18 17:27:13", "levelname": "INFO", "message": "Using Categorical Information."}
+word_embedding/vscode/glove_42B_300d_vscode_soft.npy
+The unknown symbol of the lexicon '' wasn't defined.
+(36730, 300)
+2
+300
+{"asctime": "2025-01-18 17:27:13", "levelname": "INFO", "message": "Lexicon size: 36730"}
+{"asctime": "2025-01-18 17:27:13", "levelname": "INFO", "message": "Word Embedding size: 300"}
+{"asctime": "2025-01-18 17:27:13", "levelname": "INFO", "message": "Use white space tokenizer to tokenize summary information"}
+{"asctime": "2025-01-18 17:27:13", "levelname": "INFO", "message": "BoW=False and TF=False"}
+{"asctime": "2025-01-18 17:27:13", "levelname": "INFO", "message": "Using Summary and Description information."}
+the embedding object matrix is [[0.05362702075684175 0.07439343445434951 -0.029465152059763897 ...
+  -0.021725739761307844 0.08419023710842688 0.0953974763473821]
+ [-0.20838 -0.14932 -0.017528 ... -0.54066 0.21199 -0.0094357]
+ [-0.09611 -0.25788 -0.3586 ... -0.3703 -0.092774 0.39058]
+ ...
+ [0.421177 -0.245981 -0.02406 ... -0.404026 0.302067 0.225934]
+ [0.401295 0.178345 0.276591 ... -0.045732 -0.072047 0.587338]
+ [0.0 0.0 0.0 ... 0.0 0.0 0.0]]
+{"asctime": "2025-01-18 17:27:13", "levelname": "INFO", "message": "Using BCE Loss: margin=0"}
+{"asctime": "2025-01-18 17:27:19", "levelname": "INFO", "message": "Non Negative Pair Generator"}
+{"asctime": "2025-01-18 17:27:19", "levelname": "INFO", "message": "Using the following dataset to generate negative examples: Database: vscode; Order by Date; Master report is the newest oneWe keep nested master reports; Database: vscode; Order by Date; Master report is the newest oneWe keep nested master reports;. Number of bugs in the training: 40801"}
+{"asctime": "2025-01-18 17:27:20", "levelname": "INFO", "message": "Training size: 17508"}
+{"asctime": "2025-01-18 17:27:20", "levelname": "INFO", "message": "Validation size: 508"}
+{"asctime": "2025-01-18 17:27:20", "levelname": "INFO", "message": "Adam"}
+{"asctime": "2025-01-18 17:27:20", "levelname": "INFO", "message": "Scheduler: Constant"}
+{"asctime": "2025-01-18 17:27:20", "levelname": "INFO", "message": "Epoch: 1"}
+{"asctime": "2025-01-18 17:27:20", "levelname": "INFO", "message": "LR: 0.001"}
+{"asctime": "2025-01-18 17:27:41", "levelname": "INFO", "message": null, "type": "metric", "label": "training_loss", "epoch": 1, "value": 0.4783739914408225, "sum": 8375.37184214592, "num_example": 17508}
+{"asctime": "2025-01-18 17:27:41", "levelname": "INFO", "message": null, "type": "metric", "label": "training_dist_target", "value": [0.31941615124393713, 0.32185593897658504], "epoch": 1}
+{"asctime": "2025-01-18 17:27:41", "levelname": "INFO", "message": null, "type": "metric", "label": "training_acc", "epoch": 1, "value": 0.7516563856522732, "num_correct": 13160, "num_example": 17508}
+{"asctime": "2025-01-18 17:27:41", "levelname": "INFO", "message": null, "type": "metric", "label": "training_precision", "epoch": 1, "value": 0.7741413712501526, "positive": 6221.0, "total": 8036.0}
+{"asctime": "2025-01-18 17:27:41", "levelname": "INFO", "message": null, "type": "metric", "label": "training_recall", "epoch": 1, "value": 0.7106465697288513, "positive": 6221.0, "total": 8754.0}
+{"asctime": "2025-01-18 17:27:41", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_loss", "epoch": 1, "value": 0.31948374270454166, "sum": 162.29774129390717, "num_example": 508}
+{"asctime": "2025-01-18 17:27:41", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_dist_target", "value": [0.13350985369344395, 0.24683115801473302], "epoch": 1}
+{"asctime": "2025-01-18 17:27:41", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_acc", "epoch": 1, "value": 0.860236220472441, "num_correct": 437, "num_example": 508}
+{"asctime": "2025-01-18 17:27:41", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_precision", "epoch": 1, "value": 0.9295774698257446, "positive": 198.0, "total": 213.0}
+{"asctime": "2025-01-18 17:27:41", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_recall", "epoch": 1, "value": 0.7795275449752808, "positive": 198.0, "total": 254.0}
+saved_models/vscode_saved.pt
+this case was hit!!
+{"asctime": "2025-01-18 17:27:44", "levelname": "INFO", "message": "==> Saving Model: saved_models/vscode_saved.pt"}
+{"asctime": "2025-01-18 17:27:44", "levelname": "INFO", "message": "Epoch: 2"}
+{"asctime": "2025-01-18 17:27:44", "levelname": "INFO", "message": "LR: 0.001"}
+{"asctime": "2025-01-18 17:28:05", "levelname": "INFO", "message": null, "type": "metric", "label": "training_loss", "epoch": 2, "value": 0.19911944465479786, "sum": 3486.183237016201, "num_example": 17508}
+{"asctime": "2025-01-18 17:28:05", "levelname": "INFO", "message": null, "type": "metric", "label": "training_dist_target", "value": [0.11687761260571479, 0.11745027077369612], "epoch": 2}
+{"asctime": "2025-01-18 17:28:05", "levelname": "INFO", "message": null, "type": "metric", "label": "training_acc", "epoch": 2, "value": 0.92346355951565, "num_correct": 16168, "num_example": 17508}
+{"asctime": "2025-01-18 17:28:05", "levelname": "INFO", "message": null, "type": "metric", "label": "training_precision", "epoch": 2, "value": 0.9306458830833435, "positive": 8011.0, "total": 8608.0}
+{"asctime": "2025-01-18 17:28:05", "levelname": "INFO", "message": null, "type": "metric", "label": "training_recall", "epoch": 2, "value": 0.9151245355606079, "positive": 8011.0, "total": 8754.0}
+{"asctime": "2025-01-18 17:28:05", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_loss", "epoch": 2, "value": 0.26681106895443024, "sum": 135.54002302885056, "num_example": 508}
+{"asctime": "2025-01-18 17:28:05", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_dist_target", "value": [0.15660379064364696, 0.1539657022070697], "epoch": 2}
+{"asctime": "2025-01-18 17:28:05", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_acc", "epoch": 2, "value": 0.8858267716535433, "num_correct": 450, "num_example": 508}
+{"asctime": "2025-01-18 17:28:05", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_precision", "epoch": 2, "value": 0.8983739614486694, "positive": 221.0, "total": 246.0}
+{"asctime": "2025-01-18 17:28:05", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_recall", "epoch": 2, "value": 0.8700787425041199, "positive": 221.0, "total": 254.0}
+saved_models/vscode_saved.pt
+this case was hit!!
+{"asctime": "2025-01-18 17:28:08", "levelname": "INFO", "message": "==> Saving Model: saved_models/vscode_saved.pt"}
+{"asctime": "2025-01-18 17:28:09", "levelname": "INFO", "message": "Epoch: 3"}
+{"asctime": "2025-01-18 17:28:09", "levelname": "INFO", "message": "LR: 0.001"}
+{"asctime": "2025-01-18 17:28:29", "levelname": "INFO", "message": null, "type": "metric", "label": "training_loss", "epoch": 3, "value": 0.14817961309975838, "sum": 2594.32866615057, "num_example": 17508}
+{"asctime": "2025-01-18 17:28:29", "levelname": "INFO", "message": null, "type": "metric", "label": "training_dist_target", "value": [0.08594279701044659, 0.08442285716165983], "epoch": 3}
+{"asctime": "2025-01-18 17:28:29", "levelname": "INFO", "message": null, "type": "metric", "label": "training_acc", "epoch": 3, "value": 0.945453506968243, "num_correct": 16553, "num_example": 17508}
+{"asctime": "2025-01-18 17:28:29", "levelname": "INFO", "message": null, "type": "metric", "label": "training_precision", "epoch": 3, "value": 0.9456062316894531, "positive": 8275.0, "total": 8751.0}
+{"asctime": "2025-01-18 17:28:29", "levelname": "INFO", "message": null, "type": "metric", "label": "training_recall", "epoch": 3, "value": 0.9452821612358093, "positive": 8275.0, "total": 8754.0}
+{"asctime": "2025-01-18 17:28:29", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_loss", "epoch": 3, "value": 0.3566449087435805, "sum": 181.1756136417389, "num_example": 508}
+{"asctime": "2025-01-18 17:28:29", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_dist_target", "value": [0.0439773572711494, 0.25559952503114236], "epoch": 3}
+{"asctime": "2025-01-18 17:28:29", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_acc", "epoch": 3, "value": 0.8681102362204725, "num_correct": 441, "num_example": 508}
+{"asctime": "2025-01-18 17:28:29", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_precision", "epoch": 3, "value": 0.96517413854599, "positive": 194.0, "total": 201.0}
+{"asctime": "2025-01-18 17:28:29", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_recall", "epoch": 3, "value": 0.7637795209884644, "positive": 194.0, "total": 254.0}
+saved_models/vscode_saved.pt
+this case was hit!!
+{"asctime": "2025-01-18 17:28:32", "levelname": "INFO", "message": "==> Saving Model: saved_models/vscode_saved.pt"}
+{"asctime": "2025-01-18 17:28:32", "levelname": "INFO", "message": "Epoch: 4"}
+{"asctime": "2025-01-18 17:28:32", "levelname": "INFO", "message": "LR: 0.001"}
+{"asctime": "2025-01-18 17:28:53", "levelname": "INFO", "message": null, "type": "metric", "label": "training_loss", "epoch": 4, "value": 0.11857023477377292, "sum": 2075.927670419216, "num_example": 17508}
+{"asctime": "2025-01-18 17:28:53", "levelname": "INFO", "message": null, "type": "metric", "label": "training_dist_target", "value": [0.06592872665983535, 0.06651510799042787], "epoch": 4}
+{"asctime": "2025-01-18 17:28:53", "levelname": "INFO", "message": null, "type": "metric", "label": "training_acc", "epoch": 4, "value": 0.9561343385880741, "num_correct": 16740, "num_example": 17508}
+{"asctime": "2025-01-18 17:28:53", "levelname": "INFO", "message": null, "type": "metric", "label": "training_precision", "epoch": 4, "value": 0.9557178616523743, "positive": 8374.0, "total": 8762.0}
+{"asctime": "2025-01-18 17:28:53", "levelname": "INFO", "message": null, "type": "metric", "label": "training_recall", "epoch": 4, "value": 0.9565912485122681, "positive": 8374.0, "total": 8754.0}
+{"asctime": "2025-01-18 17:28:53", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_loss", "epoch": 4, "value": 0.3455160342332885, "sum": 175.52214539051056, "num_example": 508}
+{"asctime": "2025-01-18 17:28:53", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_dist_target", "value": [0.051430732246459, 0.2339181900024414], "epoch": 4}
+{"asctime": "2025-01-18 17:28:53", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_acc", "epoch": 4, "value": 0.8720472440944882, "num_correct": 443, "num_example": 508}
+{"asctime": "2025-01-18 17:28:53", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_precision", "epoch": 4, "value": 0.9655172228813171, "positive": 196.0, "total": 203.0}
+{"asctime": "2025-01-18 17:28:53", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_recall", "epoch": 4, "value": 0.7716535329818726, "positive": 196.0, "total": 254.0}
+saved_models/vscode_saved.pt
+this case was hit!!
+{"asctime": "2025-01-18 17:28:56", "levelname": "INFO", "message": "==> Saving Model: saved_models/vscode_saved.pt"}
+{"asctime": "2025-01-18 17:28:57", "levelname": "INFO", "message": "Epoch: 5"}
+{"asctime": "2025-01-18 17:28:57", "levelname": "INFO", "message": "LR: 0.001"}
+{"asctime": "2025-01-18 17:29:17", "levelname": "INFO", "message": null, "type": "metric", "label": "training_loss", "epoch": 5, "value": 0.08972131077737222, "sum": 1570.8407090902328, "num_example": 17508}
+{"asctime": "2025-01-18 17:29:17", "levelname": "INFO", "message": null, "type": "metric", "label": "training_dist_target", "value": [0.05028316151858847, 0.05050829876795571], "epoch": 5}
+{"asctime": "2025-01-18 17:29:17", "levelname": "INFO", "message": null, "type": "metric", "label": "training_acc", "epoch": 5, "value": 0.9688142563399589, "num_correct": 16962, "num_example": 17508}
+{"asctime": "2025-01-18 17:29:17", "levelname": "INFO", "message": null, "type": "metric", "label": "training_precision", "epoch": 5, "value": 0.9653061032295227, "positive": 8514.0, "total": 8820.0}
+{"asctime": "2025-01-18 17:29:17", "levelname": "INFO", "message": null, "type": "metric", "label": "training_recall", "epoch": 5, "value": 0.9725839495658875, "positive": 8514.0, "total": 8754.0}
+{"asctime": "2025-01-18 17:29:18", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_loss", "epoch": 5, "value": 0.3660836360585971, "sum": 185.97048711776733, "num_example": 508}
+{"asctime": "2025-01-18 17:29:18", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_dist_target", "value": [0.059618349150409845, 0.22927944303497555], "epoch": 5}
+{"asctime": "2025-01-18 17:29:18", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_acc", "epoch": 5, "value": 0.8759842519685039, "num_correct": 445, "num_example": 508}
+{"asctime": "2025-01-18 17:29:18", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_precision", "epoch": 5, "value": 0.9526066184043884, "positive": 201.0, "total": 211.0}
+{"asctime": "2025-01-18 17:29:18", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_recall", "epoch": 5, "value": 0.7913385629653931, "positive": 201.0, "total": 254.0}
+saved_models/vscode_saved.pt
+this case was hit!!
+{"asctime": "2025-01-18 17:29:21", "levelname": "INFO", "message": "==> Saving Model: saved_models/vscode_saved.pt"}
+{"asctime": "2025-01-18 17:29:21", "levelname": "INFO", "message": "Epoch: 6"}
+{"asctime": "2025-01-18 17:29:21", "levelname": "INFO", "message": "LR: 0.001"}
+{"asctime": "2025-01-18 17:29:42", "levelname": "INFO", "message": null, "type": "metric", "label": "training_loss", "epoch": 6, "value": 0.08633357505017229, "sum": 1511.5282319784164, "num_example": 17508}
+{"asctime": "2025-01-18 17:29:42", "levelname": "INFO", "message": null, "type": "metric", "label": "training_dist_target", "value": [0.048544458098503614, 0.04785930766535317], "epoch": 6}
+{"asctime": "2025-01-18 17:29:42", "levelname": "INFO", "message": null, "type": "metric", "label": "training_acc", "epoch": 6, "value": 0.9683002056202878, "num_correct": 16953, "num_example": 17508}
+{"asctime": "2025-01-18 17:29:42", "levelname": "INFO", "message": null, "type": "metric", "label": "training_precision", "epoch": 6, "value": 0.9632726907730103, "positive": 8524.0, "total": 8849.0}
+{"asctime": "2025-01-18 17:29:42", "levelname": "INFO", "message": null, "type": "metric", "label": "training_recall", "epoch": 6, "value": 0.9737262725830078, "positive": 8524.0, "total": 8754.0}
+{"asctime": "2025-01-18 17:29:42", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_loss", "epoch": 6, "value": 0.43364566259496795, "sum": 220.2919965982437, "num_example": 508}
+{"asctime": "2025-01-18 17:29:42", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_dist_target", "value": [0.03544642042925977, 0.24424534895288663], "epoch": 6}
+{"asctime": "2025-01-18 17:29:42", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_acc", "epoch": 6, "value": 0.8740157480314961, "num_correct": 444, "num_example": 508}
+{"asctime": "2025-01-18 17:29:42", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_precision", "epoch": 6, "value": 0.9656862616539001, "positive": 197.0, "total": 204.0}
+{"asctime": "2025-01-18 17:29:42", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_recall", "epoch": 6, "value": 0.7755905389785767, "positive": 197.0, "total": 254.0}
+saved_models/vscode_saved.pt
+this case was hit!!
+{"asctime": "2025-01-18 17:29:47", "levelname": "INFO", "message": "==> Saving Model: saved_models/vscode_saved.pt"}
+{"asctime": "2025-01-18 17:29:47", "levelname": "INFO", "message": "Epoch: 7"}
+{"asctime": "2025-01-18 17:29:47", "levelname": "INFO", "message": "LR: 0.001"}
+{"asctime": "2025-01-18 17:30:08", "levelname": "INFO", "message": null, "type": "metric", "label": "training_loss", "epoch": 7, "value": 0.08996121853297231, "sum": 1575.0410140752792, "num_example": 17508}
+{"asctime": "2025-01-18 17:30:08", "levelname": "INFO", "message": null, "type": "metric", "label": "training_dist_target", "value": [0.050375224640714214, 0.05040115396508567], "epoch": 7}
+{"asctime": "2025-01-18 17:30:08", "levelname": "INFO", "message": null, "type": "metric", "label": "training_acc", "epoch": 7, "value": 0.9669865204477953, "num_correct": 16930, "num_example": 17508}
+{"asctime": "2025-01-18 17:30:08", "levelname": "INFO", "message": null, "type": "metric", "label": "training_precision", "epoch": 7, "value": 0.9617122411727905, "positive": 8515.0, "total": 8854.0}
+{"asctime": "2025-01-18 17:30:08", "levelname": "INFO", "message": null, "type": "metric", "label": "training_recall", "epoch": 7, "value": 0.9726982116699219, "positive": 8515.0, "total": 8754.0}
+{"asctime": "2025-01-18 17:30:08", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_loss", "epoch": 7, "value": 0.4686402572890905, "sum": 238.06925070285797, "num_example": 508}
+{"asctime": "2025-01-18 17:30:08", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_dist_target", "value": [0.033559243510088585, 0.2527363844743864], "epoch": 7}
+{"asctime": "2025-01-18 17:30:08", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_acc", "epoch": 7, "value": 0.8700787401574803, "num_correct": 442, "num_example": 508}
+{"asctime": "2025-01-18 17:30:08", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_precision", "epoch": 7, "value": 0.9653465151786804, "positive": 195.0, "total": 202.0}
+{"asctime": "2025-01-18 17:30:08", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_recall", "epoch": 7, "value": 0.7677165269851685, "positive": 195.0, "total": 254.0}
+saved_models/vscode_saved.pt
+this case was hit!!
+{"asctime": "2025-01-18 17:30:14", "levelname": "INFO", "message": "==> Saving Model: saved_models/vscode_saved.pt"}
+{"asctime": "2025-01-18 17:30:14", "levelname": "INFO", "message": "Epoch: 8"}
+{"asctime": "2025-01-18 17:30:14", "levelname": "INFO", "message": "LR: 0.001"}
+{"asctime": "2025-01-18 17:30:36", "levelname": "INFO", "message": null, "type": "metric", "label": "training_loss", "epoch": 8, "value": 0.07469368045981518, "sum": 1307.7369574904442, "num_example": 17508}
+{"asctime": "2025-01-18 17:30:36", "levelname": "INFO", "message": null, "type": "metric", "label": "training_dist_target", "value": [0.041885126861285094, 0.04317716449015702], "epoch": 8}
+{"asctime": "2025-01-18 17:30:36", "levelname": "INFO", "message": null, "type": "metric", "label": "training_acc", "epoch": 8, "value": 0.9737834132967786, "num_correct": 17049, "num_example": 17508}
+{"asctime": "2025-01-18 17:30:36", "levelname": "INFO", "message": null, "type": "metric", "label": "training_precision", "epoch": 8, "value": 0.9670082330703735, "positive": 8588.0, "total": 8881.0}
+{"asctime": "2025-01-18 17:30:36", "levelname": "INFO", "message": null, "type": "metric", "label": "training_recall", "epoch": 8, "value": 0.9810372591018677, "positive": 8588.0, "total": 8754.0}
+{"asctime": "2025-01-18 17:30:36", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_loss", "epoch": 8, "value": 1.0035917430412111, "sum": 509.8246054649353, "num_example": 508}
+{"asctime": "2025-01-18 17:30:36", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_dist_target", "value": [0.016155302993894564, 0.4066421028197281], "epoch": 8}
+{"asctime": "2025-01-18 17:30:36", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_acc", "epoch": 8, "value": 0.797244094488189, "num_correct": 405, "num_example": 508}
+{"asctime": "2025-01-18 17:30:36", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_precision", "epoch": 8, "value": 0.9808917045593262, "positive": 154.0, "total": 157.0}
+{"asctime": "2025-01-18 17:30:36", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_recall", "epoch": 8, "value": 0.6062992215156555, "positive": 154.0, "total": 254.0}
+saved_models/vscode_saved.pt
+this case was hit!!
+{"asctime": "2025-01-18 17:30:58", "levelname": "INFO", "message": "==> Saving Model: saved_models/vscode_saved.pt"}
+{"asctime": "2025-01-18 17:30:58", "levelname": "INFO", "message": "Epoch: 9"}
+{"asctime": "2025-01-18 17:30:58", "levelname": "INFO", "message": "LR: 0.001"}
+{"asctime": "2025-01-18 17:31:19", "levelname": "INFO", "message": null, "type": "metric", "label": "training_loss", "epoch": 9, "value": 0.14024682048183068, "sum": 2455.4413329958916, "num_example": 17508}
+{"asctime": "2025-01-18 17:31:19", "levelname": "INFO", "message": null, "type": "metric", "label": "training_dist_target", "value": [0.08189167572206249, 0.08193536806466074], "epoch": 9}
+{"asctime": "2025-01-18 17:31:19", "levelname": "INFO", "message": null, "type": "metric", "label": "training_acc", "epoch": 9, "value": 0.9444254055289011, "num_correct": 16535, "num_example": 17508}
+{"asctime": "2025-01-18 17:31:19", "levelname": "INFO", "message": null, "type": "metric", "label": "training_precision", "epoch": 9, "value": 0.9369875192642212, "positive": 8342.0, "total": 8903.0}
+{"asctime": "2025-01-18 17:31:19", "levelname": "INFO", "message": null, "type": "metric", "label": "training_recall", "epoch": 9, "value": 0.9529358148574829, "positive": 8342.0, "total": 8754.0}
+{"asctime": "2025-01-18 17:31:19", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_loss", "epoch": 9, "value": 1.0764537505277498, "sum": 546.8385052680969, "num_example": 508}
+{"asctime": "2025-01-18 17:31:19", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_dist_target", "value": [0.008498135396814722, 0.4552980107585276], "epoch": 9}
+{"asctime": "2025-01-18 17:31:19", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_acc", "epoch": 9, "value": 0.7716535433070866, "num_correct": 392, "num_example": 508}
+{"asctime": "2025-01-18 17:31:19", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_precision", "epoch": 9, "value": 0.9928571581840515, "positive": 139.0, "total": 140.0}
+{"asctime": "2025-01-18 17:31:19", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_recall", "epoch": 9, "value": 0.5472440719604492, "positive": 139.0, "total": 254.0}
+saved_models/vscode_saved.pt
+this case was hit!!
+{"asctime": "2025-01-18 17:31:45", "levelname": "INFO", "message": "==> Saving Model: saved_models/vscode_saved.pt"}
+{"asctime": "2025-01-18 17:31:45", "levelname": "INFO", "message": "Epoch: 10"}
+{"asctime": "2025-01-18 17:31:45", "levelname": "INFO", "message": "LR: 0.001"}
+{"asctime": "2025-01-18 17:32:06", "levelname": "INFO", "message": null, "type": "metric", "label": "training_loss", "epoch": 10, "value": 0.11227395325756138, "sum": 1965.6923736333847, "num_example": 17508}
+{"asctime": "2025-01-18 17:32:06", "levelname": "INFO", "message": null, "type": "metric", "label": "training_dist_target", "value": [0.06425963036132126, 0.06420755391799617], "epoch": 10}
+{"asctime": "2025-01-18 17:32:06", "levelname": "INFO", "message": null, "type": "metric", "label": "training_acc", "epoch": 10, "value": 0.9572195567740461, "num_correct": 16759, "num_example": 17508}
+{"asctime": "2025-01-18 17:32:06", "levelname": "INFO", "message": null, "type": "metric", "label": "training_precision", "epoch": 10, "value": 0.9483588933944702, "positive": 8466.0, "total": 8927.0}
+{"asctime": "2025-01-18 17:32:06", "levelname": "INFO", "message": null, "type": "metric", "label": "training_recall", "epoch": 10, "value": 0.9671007394790649, "positive": 8466.0, "total": 8754.0}
+{"asctime": "2025-01-18 17:32:06", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_loss", "epoch": 10, "value": 0.9195259771947786, "sum": 467.1191964149475, "num_example": 508}
+{"asctime": "2025-01-18 17:32:06", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_dist_target", "value": [0.010767573798735311, 0.3680080203559455], "epoch": 10}
+{"asctime": "2025-01-18 17:32:06", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_acc", "epoch": 10, "value": 0.8188976377952756, "num_correct": 416, "num_example": 508}
+{"asctime": "2025-01-18 17:32:06", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_precision", "epoch": 10, "value": 0.9821428656578064, "positive": 165.0, "total": 168.0}
+{"asctime": "2025-01-18 17:32:06", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_recall", "epoch": 10, "value": 0.6496062874794006, "positive": 165.0, "total": 254.0}
+saved_models/vscode_saved.pt
+this case was hit!!
+{"asctime": "2025-01-18 17:32:28", "levelname": "INFO", "message": "==> Saving Model: saved_models/vscode_saved.pt"}
+{"asctime": "2025-01-18 17:32:29", "levelname": "INFO", "message": "Epoch: 11"}
+{"asctime": "2025-01-18 17:32:29", "levelname": "INFO", "message": "LR: 0.001"}
+{"asctime": "2025-01-18 17:32:50", "levelname": "INFO", "message": null, "type": "metric", "label": "training_loss", "epoch": 11, "value": 0.07895150383211365, "sum": 1382.2829290926456, "num_example": 17508}
+{"asctime": "2025-01-18 17:32:50", "levelname": "INFO", "message": null, "type": "metric", "label": "training_dist_target", "value": [0.043748259122224055, 0.043541620508677235], "epoch": 11}
+{"asctime": "2025-01-18 17:32:50", "levelname": "INFO", "message": null, "type": "metric", "label": "training_acc", "epoch": 11, "value": 0.9722983778843957, "num_correct": 17023, "num_example": 17508}
+{"asctime": "2025-01-18 17:32:50", "levelname": "INFO", "message": null, "type": "metric", "label": "training_precision", "epoch": 11, "value": 0.9649162292480469, "positive": 8581.0, "total": 8893.0}
+{"asctime": "2025-01-18 17:32:50", "levelname": "INFO", "message": null, "type": "metric", "label": "training_recall", "epoch": 11, "value": 0.980237603187561, "positive": 8581.0, "total": 8754.0}
+{"asctime": "2025-01-18 17:32:50", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_loss", "epoch": 11, "value": 1.4686942307029183, "sum": 746.0966691970825, "num_example": 508}
+{"asctime": "2025-01-18 17:32:50", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_dist_target", "value": [0.006684988619774345, 0.4638686442938377], "epoch": 11}
+{"asctime": "2025-01-18 17:32:50", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_acc", "epoch": 11, "value": 0.7755905511811023, "num_correct": 394, "num_example": 508}
+{"asctime": "2025-01-18 17:32:50", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_precision", "epoch": 11, "value": 0.9929577708244324, "positive": 141.0, "total": 142.0}
+{"asctime": "2025-01-18 17:32:50", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_recall", "epoch": 11, "value": 0.5551180839538574, "positive": 141.0, "total": 254.0}
+saved_models/vscode_saved.pt
+this case was hit!!
+{"asctime": "2025-01-18 17:33:27", "levelname": "INFO", "message": "==> Saving Model: saved_models/vscode_saved.pt"}
+{"asctime": "2025-01-18 17:33:27", "levelname": "INFO", "message": "Epoch: 12"}
+{"asctime": "2025-01-18 17:33:27", "levelname": "INFO", "message": "LR: 0.001"}
+{"asctime": "2025-01-18 17:33:39", "levelname": "INFO", "message": null, "type": "metric", "label": "training_loss", "epoch": 12, "value": 0.14963524822443902, "sum": 1502.9364331662655, "num_example": 10044}
+{"asctime": "2025-01-18 17:33:39", "levelname": "INFO", "message": null, "type": "metric", "label": "training_dist_target", "value": [0.08689684997939912, 0.0860681256085741], "epoch": 12}
+{"asctime": "2025-01-18 17:33:39", "levelname": "INFO", "message": null, "type": "metric", "label": "training_acc", "epoch": 12, "value": 0.9423536439665472, "num_correct": 9465, "num_example": 10044}
+{"asctime": "2025-01-18 17:33:39", "levelname": "INFO", "message": null, "type": "metric", "label": "training_precision", "epoch": 12, "value": 0.9292753338813782, "positive": 4809.0, "total": 5175.0}
+{"asctime": "2025-01-18 17:33:39", "levelname": "INFO", "message": null, "type": "metric", "label": "training_recall", "epoch": 12, "value": 0.9575866460800171, "positive": 4809.0, "total": 5022.0}
+{"asctime": "2025-01-18 17:33:40", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_loss", "epoch": 12, "value": 1.7590565869188683, "sum": 893.6007461547852, "num_example": 508}
+{"asctime": "2025-01-18 17:33:40", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_dist_target", "value": [0.004255319303854948, 0.5268759689931795], "epoch": 12}
+{"asctime": "2025-01-18 17:33:40", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_acc", "epoch": 12, "value": 0.7401574803149606, "num_correct": 376, "num_example": 508}
+{"asctime": "2025-01-18 17:33:40", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_precision", "epoch": 12, "value": 0.9919354915618896, "positive": 123.0, "total": 124.0}
+{"asctime": "2025-01-18 17:33:40", "levelname": "INFO", "message": null, "type": "metric", "label": "validation_recall", "epoch": 12, "value": 0.4842519760131836, "positive": 123.0, "total": 254.0}
+saved_models/vscode_saved.pt
+this case was hit!!
+{"asctime": "2025-01-18 17:33:40", "levelname": "INFO", "message": "==> Saving Model: saved_models/vscode_saved.pt"}

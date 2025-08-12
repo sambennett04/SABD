@@ -1,0 +1,233 @@
+{
+  "MAP": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.436393"
+    ],
+    "values": [
+      0.6666666666666667
+    ]
+  },
+  "recall_rate_1": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435140"
+    ],
+    "values": [
+      0.6
+    ]
+  },
+  "recall_rate_10": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435720"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_11": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435775"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_12": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435831"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_13": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435886"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_14": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435941"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_15": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435997"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_16": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.436052"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_17": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.436107"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_18": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.436161"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_19": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.436216"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_2": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435240"
+    ],
+    "values": [
+      0.6
+    ]
+  },
+  "recall_rate_20": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.436271"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_3": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435318"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_4": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435380"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_5": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435438"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_6": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435496"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_7": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435553"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_8": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435610"
+    ],
+    "values": [
+      0.8
+    ]
+  },
+  "recall_rate_9": {
+    "steps": [
+      0
+    ],
+    "timestamps": [
+      "2025-01-28T15:26:55.435665"
+    ],
+    "values": [
+      0.8
+    ]
+  }
+}
