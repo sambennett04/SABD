@@ -6,6 +6,7 @@
 I augmented this replication package from https://github.com/soarsmu/TOSEM-DBRD, to be a baseline for a novel, multi-modal, duplicate bug report detection machine learning technique. SABD or Soft Alignment Model For Bug Duplication, is a multilayer deep learning network based on soft-attention alignment which takes a candidate bug report, that has been previously submitted to the model, and a new query bug report as input, and outputs the probability that the query report is a duplicate of the candidate report. First, SABD runs the two input reports through two sub-networks, one that considers categorical information (such as report severity or report type) and the other that considers purely textual information. Then, It combines the scores from the two sub-networks and feeds the result to a binary classifier that returns 1 if the bug reports are duplicates and 0 if they are not. You can see a diagram of the projects architecutre below. 
 
 Picture of SABD Architecture from: https://irving-muller.github.io/papers/MSR2020.pdf
+
 ![SABD_Architecture_Diagram](images/SABD_architecture.png)
 
 ### Process
