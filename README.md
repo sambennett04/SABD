@@ -1,10 +1,14 @@
 # SABD Replication
 
 ## About
+
+### Overview
 I augmented this replication package from https://github.com/soarsmu/TOSEM-DBRD, to be a baseline for a novel, multi-modal, duplicate bug report detection machine learning technique. SABD or Soft Alignment Model For Bug Duplication, is a multilayer deep learning network based on soft-attention alignment which takes a candidate bug report, that has been previously submitted to the model, and a new query bug report as input, and outputs the probability that the query report is a duplicate of the candidate report. First, SABD runs the two input reports through two sub-networks, one that considers categorical information (such as report severity or report type) and the other that considers purely textual information. Then, It combines the scores from the two sub-networks and feeds the result to a binary classifier that returns 1 if the bug reports are duplicates and 0 if they are not. You can see a diagram of the projects architecutre below. 
 
 Picture of SABD Architecture from: https://irving-muller.github.io/papers/MSR2020.pdf
+![SABD_Architecture_Diagram](images/SABD_architecture.png)
 
+### Process
 First, I fixed existing replication package bugs and recommented the code for clarity. Then, I tested the full replication package pipeline and recorded intermediary outputs, to understand any incompatibilities with my Lab's GitHub issue data. The initial package trained an SABD model on bugs from the Mozilla Info Tracking System, where report structure and tracked categorical infromation differs from GitHub, so I updated the pipeline to train SABD models on 14,000 GitHub issues. Next, I edited the evaluation phase of the package pipline to properly save trained models and export raw results, instead of only metrics, so that SABD results could be processed externally along with other project results. Finally, I built a data preprocessing pipeline that traversed my Lab's structured bug report data and converted it into the compatible format for the replication repository. 
 
 ## Setup
